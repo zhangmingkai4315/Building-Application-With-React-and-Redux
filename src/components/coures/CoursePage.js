@@ -31,8 +31,9 @@ class CoursePage extends Component{
   render(){
     return (
       <div>
-        <h3>Courses</h3>
+        <h2>课程</h2>
         {this.props.courses.map(this.courseRow)}
+        <h3>新增课程</h3>
         <input typ="text" value={this.states.course.title} onChange={this.onTitleChange}/>
         <input type="submit" value="保存" onClick={this.onSaveCourse}/>
       </div>
