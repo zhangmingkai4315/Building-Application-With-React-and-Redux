@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "build-application-with-react-and-redux",
   "scripts": {
-    "start":"npm-run-all --parallel start-server lint-watch test-watch",
-    "start-server":"babel-node tools/server.js",
+    "start": "npm-run-all --parallel start-server lint-watch test-watch",
+    "start-server": "babel-node tools/server.js",
     "prestart": "babel-node tools/prestart.js",
-    "lint":"node_modules/.bin/esw webpack.config.* src tools",
-    "lint-watch":"npm run lint -- --watch",
-    "test":"mocha --reporter progress tools/test_helper.js \"src/**/**.test.js\"",
-    "test-watch":"npm run test -- --watch"
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "lint-watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress tools/test_helper.js \"src/**/**.test.js\"",
+    "test-watch": "npm run test -- --watch"
   },
   "license": "MIT",
   "dependencies": {
@@ -56,6 +56,7 @@
     "open": "0.0.5",
     "react-addons-test-utils": "15.0.2",
     "redux-immutable-state-invariant": "1.2.3",
+    "redux-logger": "^2.8.1",
     "redux-mock-store": "1.0.2",
     "rimraf": "2.5.2",
     "style-loader": "0.13.1",

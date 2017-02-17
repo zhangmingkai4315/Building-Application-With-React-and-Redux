@@ -10,8 +10,10 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import configStore from './store/configStore';
 import {Provider} from 'react-redux';
 
-const store = configStore();
+import {loadCourse} from './actions/courseActions';
 
+const store = configStore();
+store.dispatch(loadCourse());
 
 
 render(<Provider store = {store}>
