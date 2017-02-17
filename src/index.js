@@ -7,7 +7,16 @@ import routes from './routes';
 import './styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-render(<Router history={browserHistory} routes={routes}/>,document.getElementById('app'));
+import configStore from './store/configStore';
+import {Provider} from 'react-redux';
+
+const store = configStore();
+
+
+
+render(<Provider store = {store}>
+          <Router history={browserHistory} routes={routes}/>
+       </Provider>,document.getElementById('app'));
 
 
 
