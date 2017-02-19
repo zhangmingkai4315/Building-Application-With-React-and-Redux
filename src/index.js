@@ -1,3 +1,4 @@
+/* eslint-disable import/default */
 import 'babel-polyfill';
 import {render} from 'react-dom';
 import { Router,browserHistory } from 'react-router';
@@ -17,10 +18,11 @@ const store = configStore();
 store.dispatch(loadCourse());
 store.dispatch(loadAuthors());
 
-render(<Provider store = {store}>
-          <Router history={browserHistory} routes={routes}/>
-       </Provider>,document.getElementById('app'));
-
+render(
+  <Provider store={store}>
+    <Router history={browserHistory} routes={routes} />
+  </Provider>, document.getElementById('app')
+);
 
 
 
