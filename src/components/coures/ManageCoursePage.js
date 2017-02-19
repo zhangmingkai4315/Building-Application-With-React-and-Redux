@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import  * as courseActions from '../../actions/courseActions';
 import CourseForm from './CourseForm';
 import toastr from 'toastr';
-class ManageCoursePage extends Component{
+export class ManageCoursePage extends Component{
   constructor(props,context){
     super(props);
     this.state = {
@@ -14,6 +14,7 @@ class ManageCoursePage extends Component{
     };
     this.updateCourseState=this.updateCourseState.bind(this);
     this.saveCourse = this.saveCourse.bind(this);
+    this.courseFormValid = this.courseFormValid.bind(this);
   }
   componentWillReceiveProps(nextProps){
     if(this.props.course.id!=nextProps.course.id){
@@ -26,8 +27,21 @@ class ManageCoursePage extends Component{
     course[field]=e.target.value;
     return this.setState({course});
   }
+  courseFormValid(){
+    let formValid = true;
+    let errors = {};
+    if(this.state.course.title.length<5){
+      errors.title="Title must be at least 5 characters";
+      formValid = false;
+    }
+    this.setState({errors:errors});
+    return formValid;
+  }
   saveCourse(e){
     e.preventDefault();
+    if(!this.courseFormValid()){
+      return;
+    }
     this.setState({saving:true});
     this.props.actions.saveCourse(this.state.course)
     .then(()=>{

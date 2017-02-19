@@ -17,14 +17,14 @@ export function loadCourse(){
   };
 }
 
-function updateCourseSuccess(course){
+export function updateCourseSuccess(course){
   return {
     type:Types.UPDATE_COURSE_SUCCESS,
     course
   };
 }
 
-function createCourseSuccess(course){
+export function createCourseSuccess(course){
   return {
     type:Types.CREATE_COURSE_SUCCESS,
     course
