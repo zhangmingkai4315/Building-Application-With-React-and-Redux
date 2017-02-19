@@ -1,2 +1,14 @@
+
+// Course types
 export const CREATE_COURSE='CREATE_COURSE';
 export const LOAD_COURSES_SUCCESS = 'LOAD_COURSES_SUCCESS';
+export const CREATE_COURSE_SUCCESS = 'CREATE_COURSE_SUCCESS';
+export const UPDATE_COURSE_SUCCESS = 'UPDATE_COURSE_SUCCESS';
+// Auth types
+export const LOAD_AUTH_SUCCESS ='LOAD_AUTH_SUCCESS';
+
+
+
+// Ajax types
+export const BEGIN_AJAX_CALL = 'BEGIN_AJAX_CALL';
+export const AJAX_CALL_ERROR = 'AJAX_CALL_ERROR';
